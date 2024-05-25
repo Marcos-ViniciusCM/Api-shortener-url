@@ -17,7 +17,7 @@ You can test the API with the following credentials:
 - **Password:** Marcos@123
 
 The API is available at:
-- **Server:** [insert server name here]
+- **Server:** localhost
 - **Port:** 8080
 
 ## Getting Started
