@@ -29,7 +29,7 @@ import entity.Url;
 
 
 
-@WebServlet(name ="urlController" , urlPatterns = {"","/shorten-url", "/*"})
+@WebServlet(name ="UrlController" , urlPatterns = "/shorten-url")
 public class UrlController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -81,27 +81,5 @@ public class UrlController extends HttpServlet{
 		pw.print(gson.toJson(redirectedUrl));//response is a object of type product
 	}
 	
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String path = request.getPathInfo();
-		String id = "";
-		System.out.println("caminho"+path);
-		
-		if(path != null && !path.isEmpty()) {
-			id = path.substring(1);
-		}
-		
-		Url url = urlDao.getById(id);
-	
-		 System.out.println("URL completa recuperada do banco de dados: " + url.getFullUrl());
-		
-		
-		System.out.println("full url"+url.getFullUrl());
-		
-		
-		response.sendRedirect(url.getFullUrl());
-		
-	}
 
 }
