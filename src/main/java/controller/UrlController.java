@@ -54,7 +54,6 @@ public class UrlController extends HttpServlet{
 		try(BufferedReader bf = request.getReader()){
 			jsonObject = JsonParser.parseReader(bf).getAsJsonObject();
 		}catch (Exception e) {
-			
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
